@@ -1,0 +1,50 @@
+@startuml
+
+namespace medical {
+    enum Sexe
+    
+    class Adresse
+    
+    class NumeroSecu
+}
+
+namespace XMLSchema {
+    class string
+    
+    class date
+}
+
+namespace patient {
+
+    class patient 
+ 
+    class Patient {
+        +nom: string
+        +prenom: string
+        +sexe: Sexe
+        +naissance: date
+        +numeroSS: NumeroSecu
+        +adresse: Adresse
+        +visite : Visite[]
+    }
+    
+    class Visite {
+        +date: date <<attribute>>
+        +intervenant: Intervenant
+        +acte: Acte[] 
+    }
+    
+    class Intervenant {
+        +nom: string
+        +prenom: string
+    }
+    
+    class Acte 
+    
+    Patient "1" *-- "many" Visite
+    Visite *-- Intervenant
+    patient *-- Patient
+    Visite "1" *-- "many" Acte
+}
+
+@enduml

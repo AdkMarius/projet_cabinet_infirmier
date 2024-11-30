@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cb:cabinet 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:cb="http://univ-grenoble-alpes/fr/l3miage/medical"
+        xsi:schemaLocation="http://univ-grenoble-alpes/fr/l3miage/medical ../xsd/cabinet.xsd"
+>
+    <cb:nom>Soins à Grenoble</cb:nom>
+    <cb:adresse>
+        <cb:numero>60</cb:numero>
+        <cb:rue>cb:rue de la Chimie</cb:rue>
+        <cb:codePostal>38041</cb:codePostal>
+        <cb:ville>Grenoble</cb:ville>
+    </cb:adresse>
+    <cb:infirmiers>
+        <cb:infirmier id="001">
+            <cb:nom>Fréchie</cb:nom>
+            <cb:prenom>Sarah</cb:prenom>
+            <cb:photo>sarah.png</cb:photo>
+        </cb:infirmier>
+        <cb:infirmier id="002">
+            <cb:nom>Stické</cb:nom>
+            <cb:prenom>Sophie</cb:prenom>
+            <cb:photo>sophie.jpg</cb:photo>
+        </cb:infirmier>
+        <cb:infirmier id="003">
+            <cb:nom>Ochon</cb:nom>
+            <cb:prenom>Paul</cb:prenom>
+            <cb:photo>paul.png</cb:photo>
+        </cb:infirmier>
+    </cb:infirmiers>
+    
+    <cb:patients>
+        
+        <cb:patient>
+            <cb:nom>Orouge</cb:nom>
+            <cb:prenom>Elvire</cb:prenom>
+            <cb:sexe>F</cb:sexe>
+            <cb:naissance>1982-03-08</cb:naissance>
+            <cb:numero>123467891234123</cb:numero>
+            <cb:visite date="2015-12-08" intervenant="002">
+                <cb:acte id="101" />
+            </cb:visite>
+            <cb:adresse>
+                <cb:rue>Rond-Point de la Croix de Vie</cb:rue>
+                <cb:codePostal>38700</cb:codePostal>
+                <cb:ville>La Tronche</cb:ville>
+            </cb:adresse>
+        </cb:patient>
+        
+        <cb:patient>
+            <cb:nom>Pien</cb:nom>
+            <cb:prenom>Oscare</cb:prenom>
+            <cb:sexe>F</cb:sexe>
+            <cb:naissance>1975-03-25</cb:naissance>
+            <cb:numero>123467891234136</cb:numero>
+            <cb:visite date="2015-11-08" intervenant="001">
+                <cb:acte id="101" />
+                <cb:acte id="102" />
+            </cb:visite>
+            <cb:visite date="2015-12-08" intervenant="002">
+                <cb:acte id="103" />
+            </cb:visite>
+            <cb:adresse>
+                <cb:rue>Rue Casimir Brenier</cb:rue>
+                <cb:codePostal>38000</cb:codePostal>
+                <cb:ville>Grenoble</cb:ville>
+            </cb:adresse>
+        </cb:patient>
+
+        <cb:patient>
+            <cb:nom>Kapoetla</cb:nom>
+            <cb:prenom>Xavier</cb:prenom>
+            <cb:sexe>M</cb:sexe>
+            <cb:naissance>2011-08-02</cb:naissance>
+            <cb:numero>123467891234129</cb:numero>
+            <cb:visite date="2015-12-08" intervenant="001">
+                <cb:acte id="101" />
+            </cb:visite>
+            <cb:visite date="2013-07-08" intervenant="002">
+                <cb:acte id="102" />
+                <cb:acte id="103" />
+            </cb:visite>
+            <cb:adresse>
+                <cb:rue>25 rue des Martyrs</cb:rue>
+                <cb:codePostal>38042</cb:codePostal>
+                <cb:ville>Grenoble</cb:ville>
+            </cb:adresse>
+        </cb:patient>
+
+        <cb:patient>
+            <cb:nom>Orouge</cb:nom>
+            <cb:prenom>Elvire</cb:prenom>
+            <cb:sexe>F</cb:sexe>
+            <cb:naissance>1982-03-08</cb:naissance>
+            <cb:numero>123467891234190</cb:numero>
+            <cb:visite date="2015-12-08" intervenant="002">
+                <cb:acte id="101" />
+            </cb:visite>
+            <cb:adresse>
+                <cb:rue>Rond-Point de la Croix de Vie</cb:rue>
+                <cb:codePostal>38700</cb:codePostal>
+                <cb:ville>La Tronche</cb:ville>
+            </cb:adresse>
+        </cb:patient>
+
+        <cb:patient>
+            <cb:nom>Pien</cb:nom>
+            <cb:prenom>Oscare</cb:prenom>
+            <cb:sexe>F</cb:sexe>
+            <cb:naissance>1975-03-25</cb:naissance>
+            <cb:numero>123467891234124</cb:numero>
+            <cb:visite date="2015-12-08" intervenant="003">
+                <cb:acte id="101" />
+                <cb:acte id="102" />
+            </cb:visite>
+            <cb:adresse>
+                <cb:rue>Rue Casimir Brenier</cb:rue>
+                <cb:codePostal>38000</cb:codePostal>
+                <cb:ville>Grenoble</cb:ville>
+            </cb:adresse>
+        </cb:patient>
+
+        <cb:patient>
+            <cb:nom>Kapoetla</cb:nom>
+            <cb:prenom>Xavier</cb:prenom>
+            <cb:sexe>M</cb:sexe>
+            <cb:naissance>2011-08-02</cb:naissance>
+            <cb:numero>123467891234167</cb:numero>
+            <cb:visite date="2015-12-08" intervenant="003">
+                <cb:acte id="101" />
+            </cb:visite>
+            <cb:adresse>
+                <cb:rue>25 rue des Martyrs</cb:rue>
+                <cb:codePostal>38042</cb:codePostal>
+                <cb:ville>Grenoble</cb:ville>
+            </cb:adresse>
+        </cb:patient>
+
+        <cb:patient>
+            <cb:nom>Orouge</cb:nom>
+            <cb:prenom>Elvire</cb:prenom>
+            <cb:sexe>F</cb:sexe>
+            <cb:naissance>1982-03-08</cb:naissance>
+            <cb:numero>123467891234119</cb:numero>
+            <cb:visite date="2015-12-08" intervenant="001">
+                <cb:acte id="101" />
+            </cb:visite>
+            <cb:adresse>
+                <cb:rue>Rond-Point de la Croix de Vie</cb:rue>
+                <cb:codePostal>38700</cb:codePostal>
+                <cb:ville>La Tronche</cb:ville>
+            </cb:adresse>
+        </cb:patient>
+
+        <cb:patient>
+            <cb:nom>Pien</cb:nom>
+            <cb:prenom>Oscare</cb:prenom>
+            <cb:sexe>F</cb:sexe>
+            <cb:naissance>1975-03-25</cb:naissance>
+            <cb:numero>123467891234109</cb:numero>
+            <cb:visite date="2015-12-08" intervenant="002">
+                <cb:acte id="101" />
+                <cb:acte id="102" />
+            </cb:visite>
+            <cb:adresse>
+                <cb:rue>Rue Casimir Brenier</cb:rue>
+                <cb:codePostal>38000</cb:codePostal>
+                <cb:ville>Grenoble</cb:ville>
+            </cb:adresse>
+        </cb:patient>
+
+        <cb:patient>
+            <cb:nom>Kapoetla</cb:nom>
+            <cb:prenom>Xavier</cb:prenom>
+            <cb:sexe>M</cb:sexe>
+            <cb:naissance>2011-08-02</cb:naissance>
+            <cb:numero>123467891234189</cb:numero>
+            <cb:visite date="2015-12-08" intervenant="001">
+                <cb:acte id="101" />
+            </cb:visite>
+            <cb:adresse>
+                <cb:rue>25 rue des Martyrs</cb:rue>
+                <cb:codePostal>38042</cb:codePostal>
+                <cb:ville>Grenoble</cb:ville>
+            </cb:adresse>
+        </cb:patient>
+
+    </cb:patients>
+    
+</cb:cabinet>

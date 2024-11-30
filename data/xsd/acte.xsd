@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+        version="1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:at="http://univ-grenoble-alpes/fr/l3miage/medical/acte"
+        targetNamespace="http://univ-grenoble-alpes/fr/l3miage/medical/acte"
+        elementFormDefault="qualified"
+>
+    <!-- element racine -->
+    <xs:element name="ngap" type="at:Ngap">
+        <xs:keyref name="existenceOfType" refer="at:typeUnique">
+            <xs:selector xpath="at:actes/at:acte" />
+            <xs:field xpath="@type" />
+        </xs:keyref>
+    </xs:element>
+    
+    <!-- -->
+    <xs:complexType name="Ngap">
+        <xs:sequence>
+            <xs:element name="types" type="at:Types">
+                <xs:key name="typeUnique">
+                    <xs:selector xpath="at:type" />
+                    <xs:field xpath="@id" />
+                </xs:key>
+            </xs:element>
+            
+            <xs:element name="actes" type="at:Actes">
+                <xs:key name="acteUnique">
+                    <xs:selector xpath="at:acte" />
+                    <xs:field xpath="@id" />
+                </xs:key>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- -->
+    <xs:complexType name="Types">
+        <xs:sequence>
+            <xs:element name="type" type="at:Type" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- -->
+    <xs:complexType name="Actes">
+        <xs:sequence>
+            <xs:element name="acte" type="at:Acte" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- -->
+    <xs:complexType name="Type">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="id" type="xs:string" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- -->
+    <xs:complexType name="Acte">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="id" type="xs:string" />
+                <xs:attribute name="type" type="at:TypeId" />
+                <xs:attribute name="cle" type="at:Cle" />
+                <xs:attribute name="coef" type="at:Coef" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!--
+        TypeId est une xs:restriction du xs:string pour représenter quelques valeurs
+        permettant de typer le type de l'acte
+    -->
+    <xs:simpleType name="TypeId">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="pi" />
+            <xs:enumeration value="pc" />
+            <xs:enumeration value="pl" />
+            <xs:enumeration value="sd" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--
+        Le type Cle est une xs:restriction de xs:string pour représenter les
+        différentes lettres-clés de l'acte
+    -->
+    <xs:simpleType name="Cle">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AMI" />
+            <xs:enumeration value="AIS" />
+            <xs:enumeration value="DI" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--
+        Le type Coef est une xs:restriction de xs:decimal qui commence à
+        partir de 0 pour éliminer les valeurs négatives
+    -->
+    <xs:simpleType name="Coef">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0.0" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

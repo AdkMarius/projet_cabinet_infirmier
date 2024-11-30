@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:pa="http://univ-grenoble-alpes/fr/l3miage/medical/patient"
+           xmlns:cb="http://univ-grenoble-alpes/fr/l3miage/medical"
+           targetNamespace="http://univ-grenoble-alpes/fr/l3miage/medical/patient"
+           elementFormDefault="qualified"
+>
+    <xs:import namespace="http://univ-grenoble-alpes/fr/l3miage/medical" schemaLocation="cabinet.xsd" />
+    
+    <!-- element racine -->
+    <xs:element name="patient" type="pa:Patient" />
+    
+    <!-- type Patient -->
+    <xs:complexType name="Patient">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string" />
+            <xs:element name="prenom" type="xs:string" />
+            <xs:element name="sexe" type="cb:Sexe" />
+            <xs:element name="naissance" type="xs:date" />
+            <xs:element name="numeroSS" type="cb:NumeroSecu" />
+            <xs:element name="adresse" type="cb:Adresse" />
+            <xs:element name="visite" type="pa:Visite" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- type Visite -->
+    <xs:complexType name="Visite">
+        <xs:sequence>
+            <xs:element name="intervenant">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nom" type="xs:string" />
+                        <xs:element name="prenom" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="acte" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:restriction base="xs:string" />
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="date" type="xs:date" use="required"/>
+    </xs:complexType>
+</xs:schema>

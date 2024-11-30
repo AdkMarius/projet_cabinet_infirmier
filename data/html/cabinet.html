@@ -1,0 +1,81 @@
+<html lang="fr-FR" xmlns:cb="http://univ-grenoble-alpes/fr/l3miage/medical" xmlns:at="http://univ-grenoble-alpes/fr/l3miage/medical/acte">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Le Cabinet Infirmier</title>
+        <meta name="description" content="">
+        <meta name="author" content="Marius ADJAKOTAN">
+        <meta name="author" content="Nadjidatie HOUSSOUNY">
+        <link rel="stylesheet" href="../css/cabinet.css">
+        <script src="../js/facture.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Mon Cabinet Infirmier</h1>
+        </header>
+        <main>
+            <div class="nursePatients">
+                <p class="welcomeMessage">Bonjour Sophie Stick&eacute;</p>
+                <p>Aujourd'hui, vous avez 3 patients.</p>
+                <div class="listOfPatients">
+                    <table class="tableOfPatients">
+                        <tr>
+                            <th>Nom</th><th>Pr&eacute;nom(s)</th><th>Adresse du patient</th><th>Soins &agrave; effectuer</th>
+                        </tr>
+                        <tr class="line">
+                            <td class="cell">Orouge</td><td class="cell">Elvire</td><td class="cell">Rond-Point de la Croix de Vie, 38700, La Tronche</td><td class="cell">
+                                <ul>
+                                    <li>
+            Pr&eacute;l&egrave;vement par ponction veineuse directe
+        </li>
+                                </ul>
+                            </td><td class="cell"><button class="showInvoice" onclick="
+                                openInvoice('Elvire',
+                                            'Orouge',
+                                            '101'
+                                )
+                            ">
+                            Facture
+                        </button></td>
+                        </tr>
+                        <tr class="line">
+                            <td class="cell">Orouge</td><td class="cell">Elvire</td><td class="cell">Rond-Point de la Croix de Vie, 38700, La Tronche</td><td class="cell">
+                                <ul>
+                                    <li>
+            Pr&eacute;l&egrave;vement par ponction veineuse directe
+        </li>
+                                </ul>
+                            </td><td class="cell"><button class="showInvoice" onclick="
+                                openInvoice('Elvire',
+                                            'Orouge',
+                                            '101'
+                                )
+                            ">
+                            Facture
+                        </button></td>
+                        </tr>
+                        <tr class="line">
+                            <td class="cell">Pien</td><td class="cell">Oscare</td><td class="cell">Rue Casimir Brenier, 38000, Grenoble</td><td class="cell">
+                                <ul>
+                                    <li>
+            Pr&eacute;l&egrave;vement par ponction veineuse directe
+        </li>
+                                    <li>
+            Saign&eacute;e
+        </li>
+                                </ul>
+                            </td><td class="cell"><button class="showInvoice" onclick="
+                                openInvoice('Oscare',
+                                            'Pien',
+                                            '101'
+                                )
+                            ">
+                            Facture
+                        </button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+namespace medical {
+    abstract class Personne {
+        +nom : string
+        +prenom : string
+    }
+    
+    class cabinet {
+    
+    }
+    
+    class Cabinet {
+        +nom : string
+        +adresse : Adresse
+        +infirmiers : Infirmiers 
+        +patients : Patients 
+    }
+    
+    class Infirmiers {
+        +infirmier : Infirmier[]
+    }
+    
+    class Patients {
+        +patient : Patient[]
+    }
+    
+    class Patient {
+        +sexe : Sexe 
+        +naissance : date
+        +numero : NumeroSecu
+        +visite : Visite 
+        +adresse : Adresse
+    }
+    
+    class Infirmier {
+        +id : string << attribute >>
+        +photo : anyURI
+    }
+    
+    class Adresse {
+        +numero : nonNegativeInteger
+        +rue : string
+        +codePostal : CodePostal 
+        +ville : string
+        +etage : nonNegativeInteger
+    }
+    
+    class Visite {
+        +acte : Acte 
+        +date : date << attribute >>
+        +intervenant : string << attribute >>
+    }
+    
+    class Acte {
+        +id : string << attribute >>
+        +type : Type << attribute >>
+        +cle : Cle << attribute >>
+        +coef : Coef << attribute >>
+    }
+    
+    class NumeroSecu << pattern >> {
+        [0-9]{15}
+    }
+    
+    class CodePostal << pattern >> {
+        [0-9]{5}
+    }
+    
+    class Coef << decimal >> {
+        [0.0, ..[
+    }
+        
+    enum Sexe {
+        M 
+        F 
+    }
+    
+    enum Type {
+        pi
+        pl
+        pc
+        sd
+    }
+    
+    enum Cle {
+        AIS 
+        AMI 
+        DI 
+    }
+    
+    Personne <|-- Infirmier
+    Personne <|-- Patient
+    Cabinet "1" *-- "many" Patients    
+    Cabinet "1" *-- "many" Infirmiers
+    Patients *-- Patient
+    Infirmiers *-- Infirmier
+    Cabinet *-- Adresse
+    Patient *-- Adresse
+    cabinet *-- Cabinet
+    Patient *-- Sexe
+    Patient "1" *-- "many" Visite
+    Acte *-- Type
+    Visite "1" *-- "many" Acte
+    Adresse *-- CodePostal
+    Acte *-- Cle
+    Acte *-- Coef
+    Patient *-- NumeroSecu
+    
+}
+
+namespace XMLSchema {
+    class string
+    
+    class anyURI
+        
+    class date
+    
+    class nonNegativeInteger
+    
+    class decimal
+}
+
+@enduml

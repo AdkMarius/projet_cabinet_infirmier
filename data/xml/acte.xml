@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<at:ngap 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:at="http://univ-grenoble-alpes/fr/l3miage/medical/acte"
+        xsi:schemaLocation="http://univ-grenoble-alpes/fr/l3miage/medical/acte ../xsd/acte.xsd"
+>
+    <at:types>
+        <at:type id="pi">prélèvements et injections</at:type>
+        <at:type id="pc">pansements courants</at:type>
+        <at:type id="pl">
+            pansements lourds et complexes nécessitant des conditions d'asepsie rigoureuse
+        </at:type>
+        <at:type id="sd">
+            Soins infirmiers à domicile pour un patient, quel que soit son âge, en situation
+            de dépendance temporaire ou permanante.
+        </at:type>
+    </at:types>
+    <at:actes>
+        <at:acte id="101" type="pi" cle="AMI" coef="1.5">
+            Prélèvement par ponction veineuse directe
+        </at:acte>
+        <at:acte id="102" type="pi" cle="AMI" coef="5">
+            Saignée
+        </at:acte>
+        <at:acte id="103" type="pi" cle="AMI" coef="1">
+            Prélèvement aseptique cutané ou de sécrétions muqueuses, prélèvement de selles
+            ou d'urine pour examens sytologiques, bactériologiques, mycologiques.
+        </at:acte>
+    </at:actes>
+</at:ngap>
