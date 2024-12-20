@@ -11,7 +11,7 @@
       <None Update="data\xml\acte.xml">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="data\xml\Pien.xml">
+      <None Update="data\xml\patient.xml">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="data\xsd\acte.xsd">
@@ -26,10 +26,10 @@
       <None Update="data\xslt\cabinet.xslt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="data\xslt\fiche_patient.xslt">
+      <None Update="data\xslt\patient_xml.xslt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="data\xslt\transform_patient.xslt">
+      <None Update="data\xslt\patient_html.xslt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="data\xml\adresse.xml">
