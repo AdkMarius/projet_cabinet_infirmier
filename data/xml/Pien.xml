@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pa:patient xsi:schemaLocation="http://univ-grenoble-alpes/fr/l3miage/medical/patient ../xsd/patient.xsd" xmlns:at="http://univ-grenoble-alpes/fr/l3miage/medical/acte" xmlns:cb="http://univ-grenoble-alpes/fr/l3miage/medical" xmlns:pa="http://univ-grenoble-alpes/fr/l3miage/medical/patient" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <pa:nom>Kapoetla</pa:nom>
-    <pa:prenom>Xavier</pa:prenom>
-    <pa:sexe>M</pa:sexe>
-    <pa:naissance>2011-08-02</pa:naissance>
-    <pa:numeroSS>123467891234129</pa:numeroSS>
+    <pa:nom>Pien</pa:nom>
+    <pa:prenom>Oscare</pa:prenom>
+    <pa:sexe>F</pa:sexe>
+    <pa:naissance>1975-03-25</pa:naissance>
+    <pa:numeroSS>275037306569241</pa:numeroSS>
     <pa:adresse>
-        <cb:rue>25 rue des Martyrs</cb:rue>
-        <cb:codePostal>38042</cb:codePostal>
+        <cb:rue>Casimir Brenier</cb:rue>
+        <cb:codePostal>38000</cb:codePostal>
         <cb:ville>Grenoble</cb:ville>
     </pa:adresse>
     <pa:visite date="2015-12-08">
@@ -18,18 +18,8 @@
         <pa:acte>
             Prélèvement par ponction veineuse directe
         </pa:acte>
-    </pa:visite>
-    <pa:visite date="2013-07-08">
-        <pa:intervenant>
-            <pa:nom>Stické</pa:nom>
-            <pa:prenom>Sophie</pa:prenom>
-        </pa:intervenant>
         <pa:acte>
             Saignée
-        </pa:acte>
-        <pa:acte>
-            Prélèvement aseptique cutané ou de sécrétions muqueuses, prélèvement de selles
-            ou d'urine pour examens sytologiques, bactériologiques, mycologiques.
         </pa:acte>
     </pa:visite>
 </pa:patient>

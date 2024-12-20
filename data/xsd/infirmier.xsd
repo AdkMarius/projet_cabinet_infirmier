@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:in="http://univ-grenoble-alpes/fr/l3miage/medical"
+           targetNamespace="http://univ-grenoble-alpes/fr/l3miage/medical"
+           elementFormDefault="qualified"
+>
+    <xs:include schemaLocation="cabinet.xsd" />
+    
+    <xs:element name="infirmier" type="in:Infirmier" />
+</xs:schema>

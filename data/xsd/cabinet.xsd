@@ -2,12 +2,9 @@
 <xs:schema
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
         xmlns:cb="http://univ-grenoble-alpes/fr/l3miage/medical"
-        xmlns:at="http://univ-grenoble-alpes/fr/l3miage/medical/acte"
         targetNamespace="http://univ-grenoble-alpes/fr/l3miage/medical"
         elementFormDefault="qualified"
 >
-    
-    <xs:import namespace="http://univ-grenoble-alpes/fr/l3miage/medical/acte" schemaLocation="acte.xsd" />
     
     <!-- ........................xs:element racine....................... -->
 
@@ -49,14 +46,6 @@
                     <xs:selector xpath="cb:patient" />
                     <xs:field xpath="cb:numero" />
                 </xs:key>
-
-                <!-- reference de l'acte dans chaque patient vers l'acte dans acte.xml -->
-                <!--
-                <xs:keyref name="existenceActe" refer="at:acteUnique">
-                    <xs:selector xpath="cb:patient/cb:visite/cb:acte" />
-                    <xs:field xpath="@id" />
-                </xs:keyref>
-                -->
             </xs:element>
         </xs:sequence>
     </xs:complexType>
@@ -89,11 +78,11 @@
     -->
     <xs:complexType name="Adresse">
         <xs:sequence>
-            <xs:element name="numero" type="xs:positiveInteger" minOccurs="0" />
+            <xs:element name="numero" type="xs:string" minOccurs="0" />
             <xs:element name="rue" type="xs:string" />
             <xs:element name="codePostal" type="cb:CodePostal"/>
             <xs:element name="ville" type="xs:string" />
-            <xs:element name="etage" type="xs:positiveInteger" minOccurs="0"/>
+            <xs:element name="etage" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -130,7 +119,7 @@
                 <xs:sequence>
                     <xs:element name="photo" type="xs:anyURI" />
                 </xs:sequence>
-                <xs:attribute name="id" type="xs:string" />
+                <xs:attribute name="id" type="xs:string" use="required" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -152,7 +141,7 @@
                     <xs:element name="sexe" type="cb:Sexe" />
                     <xs:element name="naissance" type="xs:date" />
                     <xs:element name="numero" type="cb:NumeroSecu" />
-                    <xs:element name="visite" type="cb:Visite" minOccurs="1" maxOccurs="unbounded" />
+                    <xs:element name="visite" type="cb:Visite" minOccurs="0" maxOccurs="unbounded" />
                     <xs:element name="adresse" type="cb:Adresse" />
                 </xs:sequence>
             </xs:extension>
@@ -183,7 +172,7 @@
     <!--
         Le type Visite représente chaque visite par un infirmier chez un patient
         Il compose un élément :
-            - acte : qui représente l'acte de NGAP des infirmiers
+            - acte : qui représente l'acte de NGAP des infirmiers en faisant référence à son ID
         Et des attributs :
             - xs:date : désigne la xs:date de la visite
             - intervenant : indique l'id de l'infirmier
@@ -193,10 +182,10 @@
             <xs:element name="acte" type="cb:CabinetActe" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="date" type="xs:date" use="required" />
-        <xs:attribute name="intervenant" type="xs:string" use="required" />
+        <xs:attribute name="intervenant" type="xs:string" />
     </xs:complexType>
     
-    <!-- -->
+    <!-- acte des infirmiers avec un id faisant référence aux actes -->
     <xs:complexType name="CabinetActe">
         <xs:attribute name="id" type="xs:string" />
     </xs:complexType>

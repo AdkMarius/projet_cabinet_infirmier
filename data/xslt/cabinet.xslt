@@ -24,7 +24,7 @@
             
             <body>
                 <header>
-                    <h1>Mon Cabinet Infirmier</h1>
+                    <h1>Cabinet Infirmier</h1>
                 </header>
                 
                 <main>

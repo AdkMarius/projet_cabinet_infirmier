@@ -40,11 +40,11 @@ namespace medical {
     }
     
     class Adresse {
-        +numero : nonNegativeInteger
+        +numero : string
         +rue : string
         +codePostal : CodePostal 
         +ville : string
-        +etage : nonNegativeInteger
+        +etage : string
     }
     
     class Visite {
@@ -55,9 +55,6 @@ namespace medical {
     
     class Acte {
         +id : string << attribute >>
-        +type : Type << attribute >>
-        +cle : Cle << attribute >>
-        +coef : Coef << attribute >>
     }
     
     class NumeroSecu << pattern >> {
@@ -67,27 +64,10 @@ namespace medical {
     class CodePostal << pattern >> {
         [0-9]{5}
     }
-    
-    class Coef << decimal >> {
-        [0.0, ..[
-    }
         
     enum Sexe {
         M 
         F 
-    }
-    
-    enum Type {
-        pi
-        pl
-        pc
-        sd
-    }
-    
-    enum Cle {
-        AIS 
-        AMI 
-        DI 
     }
     
     Personne <|-- Infirmier
@@ -101,11 +81,8 @@ namespace medical {
     cabinet *-- Cabinet
     Patient *-- Sexe
     Patient "1" *-- "many" Visite
-    Acte *-- Type
-    Visite "1" *-- "many" Acte
     Adresse *-- CodePostal
-    Acte *-- Cle
-    Acte *-- Coef
+    Visite "1" *-- "many" Acte
     Patient *-- NumeroSecu
     
 }

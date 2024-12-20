@@ -37,7 +37,7 @@
             <xs:element name="acte" minOccurs="1" maxOccurs="unbounded">
                 <xs:complexType>
                     <xs:simpleContent>
-                        <xs:restriction base="xs:string" />
+                        <xs:extension base="xs:string" />
                     </xs:simpleContent>
                 </xs:complexType>
             </xs:element>

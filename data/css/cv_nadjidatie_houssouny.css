@@ -1,0 +1,94 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Container principal */
+.container {
+    max-width: 1000px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* En-tête */
+.header {
+    background-color: #005f8b; /* Couleur de fond */
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 300px; /* Taille  */
+    height: 200px;
+    border-radius: 5%; /* Pas d'arrondi pour un carré */
+    object-fit: cover; /* Cadrage adapté */
+    border: 3px solid #005f8b; /* Bordure blanche */
+    margin-right: 20px; /* Espacement entre image et texte */
+}
+
+
+.header-info h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.header-info h2 {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+/* Section principale */
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.column-left, .column-right {
+    flex: 1 1 48%;
+}
+
+.section-title {
+    font-size: 1.4em;
+    color: #333;
+    border-left: 5px solid #005f8b;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #005f8b;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #f0f2f5;
+    color: #888;
+}

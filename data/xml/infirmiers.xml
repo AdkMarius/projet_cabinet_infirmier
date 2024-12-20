@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infirmiers>
+    <infirmier id="001">
+        <nom>Fréchie</nom>
+        <prenom>Sarah</prenom>
+        <photo>sarah.png</photo>
+    </infirmier>
+    <infirmier id="002">
+        <nom>Stické</nom>
+        <prenom>Sophie</prenom>
+        <photo>sophie.jpg</photo>
+    </infirmier>
+    <infirmier id="003">
+        <nom>Ochon</nom>
+        <prenom>Paul</prenom>
+        <photo>paul.png</photo>
+    </infirmier>
+</infirmiers>

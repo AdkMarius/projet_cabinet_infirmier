@@ -7,7 +7,7 @@
 >
     <xsl:output method="xml" indent="yes" />
     
-    <xsl:param name="destinedName">Kapoetla</xsl:param>
+    <xsl:param name="destinedName">Pien</xsl:param>
 
     <xsl:variable name="ngap" select="document('../xml/acte.xml', /)/at:ngap" />
 
